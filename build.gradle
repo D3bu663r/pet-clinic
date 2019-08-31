@@ -1,5 +1,7 @@
 plugins {
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'net.researchgate.release' version '2.6.0'
 }
 
 allprojects {
@@ -35,4 +37,12 @@ allprojects {
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 
+}
+
+springBoot {
+    mainClassName = 'com.rafael.petclinic.PetClinicApplication'
+}
+
+dependencies {
+    implementation project(':pet-clinic-web')
 }
