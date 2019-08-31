@@ -1,4 +1,4 @@
-package petclinic.model.type;
+package com.rafael.petclinic.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class PetType {
-    private String name;
+class Person {
+    private String firstName;
+    private String lastName;
 }
