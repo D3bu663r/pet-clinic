@@ -1,4 +1,4 @@
-package com.rafael.petclinic.model;
+package petclinic.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
