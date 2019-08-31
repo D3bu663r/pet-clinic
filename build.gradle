@@ -40,7 +40,7 @@ allprojects {
 }
 
 springBoot {
-    mainClassName = 'com.rafael.petclinic.PetClinicApplication'
+    mainClassName = 'com.rafael.com.rafael.petclinic.PetClinicApplication'
 }
 
 dependencies {
