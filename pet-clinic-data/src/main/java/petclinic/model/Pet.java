@@ -1,9 +1,9 @@
-package com.rafael.petclinic.model;
+package petclinic.model;
 
-import com.rafael.petclinic.model.type.PetType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import petclinic.model.type.PetType;
 
 import java.time.LocalDate;
 
