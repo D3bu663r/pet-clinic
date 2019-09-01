@@ -4,10 +4,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @NoArgsConstructor
-class Person extends BaseEntity {
-    private String firstName;
-    private String lastName;
+public class BaseEntity implements Serializable {
+    private Long id;
 }
