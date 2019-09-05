@@ -2,12 +2,14 @@ package com.rafael.petclinic.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@RequestMapping("vets")
 @Controller
-public class IndexController {
+public class VetController {
 
     @GetMapping({"", "index", "index.html"})
-    public String index() {
-        return "index";
+    public String listAll() {
+        return "vets/index";
     }
 }
