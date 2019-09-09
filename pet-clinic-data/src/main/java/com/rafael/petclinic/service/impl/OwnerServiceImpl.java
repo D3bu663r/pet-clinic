@@ -3,9 +3,11 @@ package com.rafael.petclinic.service.impl;
 import com.rafael.petclinic.model.Owner;
 import com.rafael.petclinic.service.OwnerService;
 import com.rafael.petclinic.service.map.AbstractMapService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceImpl extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Owner findByLastName(String lastName) {
