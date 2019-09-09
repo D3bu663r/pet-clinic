@@ -3,9 +3,11 @@ package com.rafael.petclinic.service.impl;
 import com.rafael.petclinic.model.Pet;
 import com.rafael.petclinic.service.PetService;
 import com.rafael.petclinic.service.map.AbstractMapService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetServiceImpl extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
