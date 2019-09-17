@@ -1,13 +1,11 @@
 package com.rafael.petclinic.service.map;
 
+import com.rafael.petclinic.model.BaseEntity;
 import com.rafael.petclinic.service.CrudService;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-public abstract class AbstractMapService<T, ID> implements CrudService<T, ID> {
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> implements CrudService<T, ID> {
     protected Map<ID, T> map = new HashMap<>();
 
     @Override
@@ -20,8 +18,12 @@ public abstract class AbstractMapService<T, ID> implements CrudService<T, ID> {
         return map.get(id);
     }
 
-    protected T save(ID id, T entity) {
-        return map.put(id, entity);
+    @Override
+    public T save(T entity) {
+        if (entity == null) return null;
+        if (entity.getId() == null)
+            entity.setId(getNextId());
+        return map.put((ID) entity.getId(), entity);
     }
 
     @Override
@@ -32,5 +34,15 @@ public abstract class AbstractMapService<T, ID> implements CrudService<T, ID> {
     @Override
     public void deleteById(ID id) {
         map.remove(id);
+    }
+
+    private Long getNextId() {
+        Long nextId = null;
+        try {
+            nextId = Collections.max(map.keySet()).longValue() + 1L;
+        } catch (NoSuchElementException e) {
+            nextId = 1L;
+        }
+        return nextId;
     }
 }
