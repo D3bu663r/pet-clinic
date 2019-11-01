@@ -1,13 +1,8 @@
 package com.rafael.petclinic.bootstrap;
 
-import com.rafael.petclinic.model.Owner;
-import com.rafael.petclinic.model.Vet;
-import com.rafael.petclinic.model.type.PetType;
 import com.rafael.petclinic.service.OwnerService;
 import com.rafael.petclinic.service.PetTypeService;
 import com.rafael.petclinic.service.VetService;
-import com.rafael.petclinic.service.impl.OwnerServiceImpl;
-import com.rafael.petclinic.service.impl.VetServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

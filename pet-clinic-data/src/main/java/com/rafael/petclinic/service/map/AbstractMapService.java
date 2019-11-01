@@ -1,6 +1,6 @@
 package com.rafael.petclinic.service.map;
 
-import com.rafael.petclinic.model.BaseEntity;
+import com.rafael.petclinic.entities.BaseEntity;
 import com.rafael.petclinic.service.CrudService;
 
 import java.util.*;

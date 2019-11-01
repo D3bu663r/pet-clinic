@@ -1,6 +1,6 @@
-package com.rafael.petclinic.model.type;
+package com.rafael.petclinic.entities;
 
-import com.rafael.petclinic.model.BaseEntity;
+import com.rafael.petclinic.entities.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @Table(name = "pet_types")
-public class PetType extends BaseEntity {
+public class PetTypeEntity extends BaseEntity {
     @Column(name = "name")
     private String name;
 }

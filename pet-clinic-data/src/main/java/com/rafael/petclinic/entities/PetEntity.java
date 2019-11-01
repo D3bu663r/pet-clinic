@@ -1,6 +1,5 @@
-package com.rafael.petclinic.model;
+package com.rafael.petclinic.entities;
 
-import com.rafael.petclinic.model.type.PetType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,20 +13,20 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "pets")
-public class Pet extends BaseEntity {
+public class PetEntity extends BaseEntity {
     @Column(name = "name")
     private String name;
 
     @ManyToOne
     @JoinColumn(name = "pet_type_id")
-    private PetType petType;
+    private PetTypeEntity petType;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
-    private Owner owner;
+    private OwnerEntity owner;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
-    private Set<Visit> visits;
+    private Set<VisitEntity> visits;
 
     @Column(name = "birth_date")
     private LocalDate birthDate;

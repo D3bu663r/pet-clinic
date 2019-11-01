@@ -1,4 +1,4 @@
-package com.rafael.petclinic.model;
+package com.rafael.petclinic.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,10 +12,10 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "vets")
-public class Vet extends Person {
+public class VetEntity extends PersonEntity {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "vet_specialities",
             joinColumns = @JoinColumn(name = "vet_id"),
             inverseJoinColumns = @JoinColumn(name = "speciality_id"))
-    private Set<Speciality> specialities;
+    private Set<SpecialityEntity> specialities;
 }

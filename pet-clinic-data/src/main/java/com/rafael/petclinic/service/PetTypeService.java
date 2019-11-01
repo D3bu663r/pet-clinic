@@ -1,7 +1,7 @@
 package com.rafael.petclinic.service;
 
-import com.rafael.petclinic.model.type.PetType;
+import com.rafael.petclinic.entities.PetTypeEntity;
 
-public interface PetTypeService extends CrudService<PetType, Long>{
+public interface PetTypeService extends CrudService<PetTypeEntity, Long>{
 
 }

@@ -1,4 +1,4 @@
-package com.rafael.petclinic.model;
+package com.rafael.petclinic.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @Table(name = "specialities")
-public class Speciality extends BaseEntity {
+public class SpecialityEntity extends BaseEntity {
     @Column(name = "description")
     private String description;
 }

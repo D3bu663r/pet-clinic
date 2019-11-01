@@ -1,4 +1,4 @@
-package com.rafael.petclinic.model;
+package com.rafael.petclinic.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import javax.persistence.MappedSuperclass;
 @Setter
 @NoArgsConstructor
 @MappedSuperclass
-class Person extends BaseEntity {
+class PersonEntity extends BaseEntity {
     @Column(name = "first_name")
     private String firstName;
 

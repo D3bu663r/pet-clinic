@@ -1,4 +1,4 @@
-package com.rafael.petclinic.model;
+package com.rafael.petclinic.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "owners")
-public class Owner extends Person {
+public class OwnerEntity extends PersonEntity {
     @Column(name = "address")
     private String address;
 
@@ -23,5 +23,5 @@ public class Owner extends Person {
     private String telephone;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private Set<Pet> pets;
+    private Set<PetEntity> pets;
 }

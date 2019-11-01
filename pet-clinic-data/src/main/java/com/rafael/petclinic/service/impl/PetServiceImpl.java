@@ -1,6 +1,6 @@
 package com.rafael.petclinic.service.impl;
 
-import com.rafael.petclinic.model.Pet;
+import com.rafael.petclinic.entities.PetEntity;
 import com.rafael.petclinic.service.PetService;
 import com.rafael.petclinic.service.map.AbstractMapService;
 import org.springframework.stereotype.Service;
@@ -8,25 +8,25 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class PetServiceImpl extends AbstractMapService<Pet, Long> implements PetService {
+public class PetServiceImpl extends AbstractMapService<PetEntity, Long> implements PetService {
 
     @Override
-    public Set<Pet> findAll() {
+    public Set<PetEntity> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Pet findById(Long id) {
+    public PetEntity findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Pet save(Pet entity) {
+    public PetEntity save(PetEntity entity) {
         return super.save(entity);
     }
 
     @Override
-    public void delete(Pet entity) {
+    public void delete(PetEntity entity) {
         super.delete(entity);
     }
 

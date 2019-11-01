@@ -1,4 +1,4 @@
-package com.rafael.petclinic.model;
+package com.rafael.petclinic.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name = "visits")
-public class Visit extends BaseEntity {
+public class VisitEntity extends BaseEntity {
     @Column(name = "visit_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
@@ -23,5 +23,5 @@ public class Visit extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "pet_id")
-    private Pet pet;
+    private PetEntity pet;
 }
