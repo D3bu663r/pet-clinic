@@ -1,43 +1,57 @@
 package com.rafael.petclinic.service.impl;
 
 import com.rafael.petclinic.entities.OwnerEntity;
+import com.rafael.petclinic.repositories.OwnerRepository;
+import com.rafael.petclinic.repositories.PetRepository;
+import com.rafael.petclinic.repositories.PetTypeRepository;
 import com.rafael.petclinic.service.OwnerService;
-import com.rafael.petclinic.service.map.AbstractMapService;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
-public class OwnerServiceImpl extends AbstractMapService<OwnerEntity, Long> implements OwnerService {
+public class OwnerServiceImpl implements OwnerService {
+
+    private final OwnerRepository ownerRepository;
+    private final PetRepository petRepository;
+    private final PetTypeRepository petTypeRepository;
+
+    public OwnerServiceImpl(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
+        this.ownerRepository = ownerRepository;
+        this.petRepository = petRepository;
+        this.petTypeRepository = petTypeRepository;
+    }
+
     @Override
     public OwnerEntity findByLastName(String lastName) {
-        return map.values().stream()
-                .filter(entity -> entity.getLastName().equals(lastName))
-                .findFirst().orElse(null);
+        return ownerRepository.findByLastName(lastName);
     }
 
     @Override
     public Set<OwnerEntity> findAll() {
-        return super.findAll();
+        Set<OwnerEntity> ownerEntities = new HashSet<>();
+        ownerRepository.findAll().forEach(ownerEntities::add);
+        return ownerEntities;
     }
 
     @Override
     public OwnerEntity findById(Long id) {
-        return super.findById(id);
+        return ownerRepository.findById(id).orElse(null);
     }
 
     @Override
     public OwnerEntity save(OwnerEntity entity) {
-        return super.save(entity);
+        return ownerRepository.save(entity);
     }
 
     @Override
     public void delete(OwnerEntity entity) {
-        super.delete(entity);
+        ownerRepository.delete(entity);
     }
 
     @Override
     public void deleteById(Long id) {
-        super.deleteById(id);
+        ownerRepository.deleteById(id);
     }
 }
