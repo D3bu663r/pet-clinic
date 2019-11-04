@@ -1,5 +1,8 @@
 package com.rafael.petclinic.bootstrap;
 
+import com.rafael.petclinic.entities.OwnerEntity;
+import com.rafael.petclinic.entities.PetTypeEntity;
+import com.rafael.petclinic.entities.VetEntity;
 import com.rafael.petclinic.service.OwnerService;
 import com.rafael.petclinic.service.PetTypeService;
 import com.rafael.petclinic.service.VetService;
@@ -22,49 +25,53 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        PetType dog = new PetType();
-//        dog.setName("Dog");
-//
-//        PetType savedDogPetType = petTypeService.save(dog);
-//
-//        PetType cat = new PetType();
-//        cat.setName("Cat");
-//
-//        PetType savedCatPetType = petTypeService.save(cat);
-//
-//        Owner owner1 = new Owner();
-//        owner1.setFirstName("Michael");
-//        owner1.setLastName("Weston");
-//        owner1.setAddress("123 Brickerel");
-//        owner1.setCity("Miami");
-//        owner1.setTelephone("16988113344");
-//
-//        ownerService.save(owner1);
-//
-//        Owner owner2 = new Owner();
-//        owner2.setFirstName("Fiona");
-//        owner2.setLastName("Glenanne");
-//        owner2.setAddress("123 Brickerel");
-//        owner2.setCity("Miami");
-//        owner2.setTelephone("16988113344");
-//
-//        ownerService.save(owner2);
-//
-//        System.out.println("Loader owners");
-//
-//        Vet vet1 = new Vet();
-//        vet1.setFirstName("Sam");
-//        vet1.setLastName("Axe");
-//
-//        vetService.save(vet1);
-//
-//        Vet vet2 = new Vet();
-//        vet2.setFirstName("Jessie");
-//        vet2.setLastName("Porter");
-//
-//        vetService.save(vet2);
-//
-//        System.out.println("Loader vets");
+        PetTypeEntity dog = new PetTypeEntity();
+        dog.setName("Dog");
+
+        PetTypeEntity savedDogPetType = petTypeService.save(dog);
+
+        PetTypeEntity cat = new PetTypeEntity();
+        cat.setName("Cat");
+
+        PetTypeEntity savedCatPetType = petTypeService.save(cat);
+
+        OwnerEntity owner1 = OwnerEntity.builder()
+                .firstName("Michael")
+                .lastName("Weston")
+                .address("123 Brickerel")
+                .city("Miami")
+                .telephone("16988113344")
+                .build();
+
+        ownerService.save(owner1);
+
+        OwnerEntity owner2 = OwnerEntity.builder()
+                .firstName("Fiona")
+                .lastName("Glenanne")
+                .address("123 Brickerel")
+                .city("Miami")
+                .telephone("16988113344")
+                .build();
+
+        ownerService.save(owner2);
+
+        System.out.println("Loader owners");
+
+        VetEntity vet1 = VetEntity.builder()
+                .firstName("Sam")
+                .lastName("Axe")
+                .build();
+
+        vetService.save(vet1);
+
+        VetEntity vet2 = VetEntity.builder()
+                .firstName("Jessie")
+                .lastName("Porter")
+                .build();
+
+        vetService.save(vet2);
+
+        System.out.println("Loader vets");
 
     }
 }
